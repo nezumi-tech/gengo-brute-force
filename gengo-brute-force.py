@@ -10,7 +10,14 @@ joyo = pd.read_csv("joyo_kanji.csv", header=None)
     
 joyo_list = joyo.values.tolist()
 
+with open('gengo.txt', mode='w', encoding='utf-8') as f:
+    for a in range(len(joyo_list) - 1):
+        for b in range(len(joyo_list) - 1):
+            f.write(''.join(joyo_list[a] + joyo_list[b])+' ')
+
+"""
 with open('gengo.csv', mode='w', encoding='utf-8') as f:
     for a in range(len(joyo_list) - 1):
         for b in range(len(joyo_list) - 1):
             f.write(''.join(joyo_list[a] + joyo_list[b])+'\n')
+"""
